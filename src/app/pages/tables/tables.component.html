@@ -1,0 +1,36 @@
+
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">Employes</h4>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Nom</th>
+                  <th>Prenom</th>
+                  <th>Matricule</th>
+                  <th class=" text-center">Poste</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let employe of employes">
+                  <td>{{employe.nom}}</td>
+                  <td>{{employe.prenom}}r</td>
+                  <td>{{employe.matricule}}</td>
+                  <td class=" text-center">{{employe.poste}}</td>
+                </tr>
+               
+             
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 

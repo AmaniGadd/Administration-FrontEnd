@@ -1,0 +1,52 @@
+
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">Sanctions</h4>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Employe</th>
+                  <th>Type de sanction</th>
+                  <th>Date de sanction</th>
+                  <th>Cause</th>
+                  <th>Ajoute par</th>
+          
+                  <th class=" text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let sanction of sanctions">
+                  <td>{{sanction.employe.nom}} {{sanction.employe.prenom}}</td>
+                  <td>{{sanction.typeSanction}}</td>
+                  <td>{{sanction.dateSanction}}</td>
+                  <td>{{sanction.cause}}</td>
+                  <td>{{sanction.ajoutePar}}</td>
+              
+                  
+                  <td class=" td-actions text-right">
+                  
+                  <button style="font-size: 1.5rem; color: aliceblue; " class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                    <i class=" tim-icons icon-pencil"> </i>
+                  </button>
+               
+                  <button style="font-size: 1.5rem; color: aliceblue;" class=" btn btn-link" type="button" placement="left" ngbTooltip="Remove" container="body" >
+                    <i (click)="deleteSanction(sanction.id)" class=" tim-icons icon-trash-simple"> </i>
+                  </button>
+                  </td>
+                </tr>
+               
+             
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 

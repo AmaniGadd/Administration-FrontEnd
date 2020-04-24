@@ -1,0 +1,55 @@
+
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">Employes</h4>
+          <button [routerLink]="['/addEmploye']" class=" btn btn-fill btn-danger" type="submit">Ajouter Employe</button>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Id</th>
+                  <th>Matricule</th>
+                  <th>Employe</th>
+                  <th>Poste</th>
+                  <th>Equipe</th>
+                <th class="text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let employe of employes">
+                  <td>{{employe.id}}</td>
+                  <td>{{employe.matricule}}</td>
+                  <td>{{employe.nom}} {{employe.prenom}}</td>
+                  <td>{{employe.poste}}</td>
+                  <td>{{employe.equipe.id}}</td>
+                  
+                  
+                  <td class=" td-actions text-right">
+                    <button style="font-size: 1.5rem; color: aliceblue; " class=" btn btn-link" type="button" placement="left" ngbTooltip="Details" container="body" >
+                      <i (click)="LoadEmployeUpdateForm(employe.id)" class=" tim-icons icon-badge"> </i>
+                    </button>
+                    <button style="font-size: 1.5rem; color: aliceblue; " class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                      <i  (click)="updateEmploye(employe.id)" class=" tim-icons icon-pencil"> </i>
+                    </button>
+                 
+                    <button  style="font-size: 1.5rem; color: aliceblue;" class=" btn btn-link" type="button" placement="left" ngbTooltip="Remove" container="body" >
+                      <i (click)="deleteEmploye(employe.id)" class=" tim-icons icon-trash-simple"> </i>
+                    </button>
+                
+                  </td>
+                </tr>
+               
+             
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 

@@ -1,0 +1,56 @@
+
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">Congés</h4>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Employe</th>
+                  <th>Durée de congé</th>
+                  <th>Type de congé</th>
+                  <th>Date Debut</th>
+                  <th>Date Fin</th>
+                  <th>Cause</th>
+                 
+                  <th>Reponse</th>
+                  <th class=" text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let conge of conges">
+                  <td>{{conge.employe.nom}} {{conge.employe.prenom}}</td>
+                  <td>{{conge.dureeConge}}</td>
+                  <td>{{conge.typeConge}}</td>
+                  <td>{{conge.dateDebut}}</td>
+                  <td>{{conge.dateFin}}</td>
+                  <td>{{conge.cause}}</td>
+                  
+                  <td>{{conge.reponse}}</td>
+                  <td class=" td-actions text-right">
+                    <button style="font-size: 1.5rem; color: aliceblue;" class=" btn btn-link" type="button" placement="left" ngbTooltip="Comments" container="body" >
+                      <i  class=" tim-icons icon-notes"> </i>
+                    </button>
+                  <button style="font-size: 1.5rem; color: aliceblue;" class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                    <i class=" tim-icons icon-pencil"> </i>
+                  </button>
+                  <button style="font-size: 1.5rem; color: aliceblue;" class=" btn btn-link" type="button" placement="left" ngbTooltip="Remove" container="body" >
+                    <i (click)="deleteConge(conge.id)" class=" tim-icons icon-trash-simple"> </i>
+                  </button>
+                  </td>
+                </tr>
+               
+             
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 

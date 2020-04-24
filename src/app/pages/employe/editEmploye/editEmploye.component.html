@@ -1,0 +1,93 @@
+
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-8">
+      <div class=" card">
+        <div class=" card-header"><h5 class=" title">Edit Employe</h5></div>
+        <div *ngIf="updated; else elseBlock1" class=" card-body">
+          <form [formGroup]="registerForm" (ngSubmit)="updateAuthor()">
+            <div class=" row">
+              <div class=" col-md-4 pl-md-1">
+                <div class="form-group">
+                  <label> Matricule </label>
+                  <input
+                    class="form-control"
+                    
+                    type="text"
+                    formControlName="matricule"
+                    [ngClass]="{ 'is-invalid': f.matricule.errors }"/>
+                  <div *ngIf="f.matricule.errors" class="invalid-feedback">
+                    <div *ngIf="f.matricule.errors.required">name is required</div>
+                  </div>
+                </div>
+              </div>
+              <div class=" col-md-4 pl-md-1">
+                <div class="form-group">
+                  <label> Poste </label>
+                  <input
+                    class="form-control"
+                    
+                    type="text"
+                    formControlName="poste"
+                    [ngClass]="{ 'is-invalid': f.poste.errors }"/>
+                </div>
+            </div>
+            </div>
+            <div class=" row">
+              <div class=" col-md-4 pr-md-1">
+                <div class="form-group">
+                  <label> Nom </label>
+                  <input
+                    class="form-control"
+                    
+                    type="text"
+                    formControlName="nom"
+                    [ngClass]="{ 'is-invalid': f.nom.errors }"
+                  />
+                </div>
+              </div>
+              <div class=" col-md-4 pl-md-1">
+                <div class="form-group">
+                  <label > Prenom </label>
+                  <input
+                    class="form-control"
+                    
+                    type="text"
+                    formControlName="prenom"
+                    [ngClass]="{ 'is-invalid': f.prenom.errors }"/>
+                </div>
+              </div>
+            
+        
+            <div class=" col-md-4 pl-md-1">
+              <div  class="form-group">
+                <label class="badge">Equipe</label>
+                <select  class="form-control"  formControlName="eqId" >
+                  <option style="color: black" *ngFor="let val of equipes" [value]="val.id">{{val.id}}</option>
+                </select>
+               <p>{{epSelected}}</p>
+              
+              </div>
+              </div>
+            </div>
+            
+            
+            <div class=" card-footer">
+              
+              <button class=" btn btn-fill btn-danger" >Save</button>
+            </div>
+             
+          </form>
+        </div>
+        <ng-template #elseBlock2>
+          <div class="modal-body">
+            <h5>Perfect.....!</h5>
+            <strong>Book was added.....</strong>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+

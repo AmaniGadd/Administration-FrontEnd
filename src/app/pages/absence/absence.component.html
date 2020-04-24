@@ -1,0 +1,51 @@
+
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">Absences</h4>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Employe</th>
+                  <th>Date d'Absence</th>
+                  <th>durée d'Absence</th>
+                  <th>Certifié</th>
+                  <th>Piece jointe</th>
+                  <th class="text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let absence of absences">
+                  <td>{{absence.employe.nom}} {{absence.employe.prenom}}</td>
+                  <td>{{absence.dateAbs}}</td>
+                  <td>{{absence.dureeAbs}}</td>
+                  <td>{{absence.certif}}</td>
+                  <td >{{absence.pieceJointe}}</td>
+                  <td class=" td-actions text-right">
+                    <button style="font-size: 1.5rem; color: aliceblue;" class=" btn btn-link" type="button" placement="left" ngbTooltip="Comments" container="body" >
+                      <i  class=" tim-icons icon-notes"> </i>
+                    </button>
+                  <button style="font-size: 1.5rem; color: aliceblue; " class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body" >
+                    <i class=" tim-icons icon-pencil"> </i>
+                  </button>
+               
+                  <button style="font-size: 1.5rem; color: aliceblue;" class=" btn btn-link" type="button" placement="left" ngbTooltip="Remove" container="body" >
+                    <i (click)="deleteAbsence(absence.id)" class=" tim-icons icon-trash-simple"> </i>
+                  </button>
+                  </td>
+                </tr>
+               
+             
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
